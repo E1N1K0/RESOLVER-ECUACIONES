@@ -4,20 +4,18 @@ Created dec 30, 2021
 @author: E1N1K0
 
 '''
-
 def resolver_ecuacion():
     ecuacion = str(input('ecuacion: '))                                                    #Solicita ingresar una ecuacion (separada por espacio entre cada termino)
     asignacion = []                                                                        #Prepara la lista vacia.
-    variables = [i for i in ecuacion.split() if i.isalpha() == True]                       #Separa el string (tipo palabra) y deja solo las variables.
-    #print(variables)                                                                       Para verificar que distingue las variables.
-    #variables_unicas =                                                                    #A este se le deberían asignar los valores (no a variables)
+    variables = [i for i in set(ecuacion.split()) if i.isalpha() == True]                  #Separa el string (tipo palabra) y deja solo las variables unicas (con set).
     valores = [asignacion.append(float(input('ingresa ' + i + ': '))) for i in variables]  #Solicita asignar valores de las variables. Aqui se podría resolver el bug de no repetir variable...
-    diccionario = {variables[i]:asignacion[i] for i in range(len(variables))}              #Almacena los valores asignados en un diccionario (solo los valores). Reemplazar variables por variables unicas.
+    diccionario = {variables[i]:asignacion[i] for i in range(len(variables))}#Almacena los valores asignados en un diccionario (solo los valores). Reemplazar variables por variables unicas.
     solucion = [diccionario[i] if i.isalpha() == True else i for i in ecuacion.split()]    #Almacena los valores asignados en diccionario (incorpora simbolos).   
     resultado = ' '.join(map(str,solucion))                                                #Queda en string!
     return eval(resultado)                                                                 #Calcula el string!
 
 #EJECUCION:
 resolver_ecuacion()  # y = a + b * x     => escribe solo a + b * x; asigna 1,2,3 resultado = 7
-#Otros: y = a * x ** 2, asigna 2,3 resultado = 18
 #Area_triangulo, At = base * altura / 2; asigna 2, 4 => resultado = 4
+#ecuacion cubica, y = A + B * x + C * x ** 2 + D * x ** 3, asigna 1,2,3,4,5,6 => resultado = 54
+#exponente = y = 2 ** x, asigna 2, resultado = 2
