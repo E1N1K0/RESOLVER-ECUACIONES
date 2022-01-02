@@ -1,24 +1,23 @@
 '''
 Created dec 30, 2021
-last updated jan 01,2022
+last updated jan 02, 2022
 
 @author: E1N1K0
 
 '''
 def resolver_ecuacion():                            
-    ecuacion = str(input('ingresa la ecuacion: '))                                                                    #Solicita ingresar una ecuacion (separada por espacio entre cada termino)
-    ecuacion_espacio = ''.join([i if i.isalnum() == True 
-                                    else '' if i == ' ' 
-                                    else '' if i == '_' 
-                                    else ' ' + i + ' ' 
-                                        for i in ecuacion])                                                           #Agrega espacios requeridos para separar los terminos y simbolos.
-    asignacion = []                                                                                                   #Prepara la lista vacia.
-    variables = [i for i in set(ecuacion_espacio.split()) if i.isalpha() == True]                                     #Separa el string (tipo palabra) y deja solo las variables unicas (con set).
-    valores = [asignacion.append(float(input('ingresa ' + i + ': '))) for i in variables]                             #Solicita asignar valores de las variables. Aqui se podría resolver el bug de no repetir variable...
-    diccionario = {variables[i]:asignacion[i] for i in range(len(variables))}                                         #Almacena los valores asignados en un diccionario (solo los valores). Reemplazar variables por variables unicas.
-    solucion = [diccionario[i] if i.isalpha() == True else i for i in ecuacion_espacio.split()]                       #Almacena los valores asignados en diccionario (incorpora simbolos).   
-    resultado = ' '.join(map(str,solucion))                                                                           #Queda en string!
-    return eval(resultado) 
+    ecuacion = str(input('ingresa la ecuacion: '))                                                  #Solicita ingresar una ecuacion (separada por espacio entre cada termino)
+    ecuacion_espacio0 = ''.join([i  if i.isalnum() == True
+                                    else '' if i == ' ' or i == '_' 
+                                    else ' ' + i + ' ' for i in ecuacion])                          #Agrega espacios requeridos para separar los terminos y simbolos.
+    ecuacion_espacio = ecuacion_espacio0.replace('*  *','**')                                       #Soluciona el problema de separar los **.
+    asignacion = []                                                                                 #Prepara la lista vacia.
+    variables = [i for i in set(ecuacion_espacio.split()) if i.isalpha() == True]                   #Separa el string (tipo palabra) y deja solo las variables unicas (con set).
+    valores = [asignacion.append(float(input('ingresa ' + i + ': '))) for i in variables]           #Solicita asignar valores de las variables. Aqui se podría resolver el bug de no repetir variable...
+    diccionario = {variables[i]:asignacion[i] for i in range(len(variables))}                       #Almacena los valores asignados en un diccionario (solo los valores). Reemplazar variables por variables unicas.
+    solucion = [diccionario[i] if i.isalpha() == True else i for i in ecuacion_espacio.split()]     #Almacena los valores asignados en diccionario (incorpora simbolos).   
+    resultado = ' '.join(map(str,solucion))                                                         #Queda en string!
+    return eval(resultado)                                                                          #Calcula el string!
 
 
 #EJECUCION:
