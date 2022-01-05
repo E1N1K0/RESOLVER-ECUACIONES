@@ -9,7 +9,7 @@ def resolver_ecuacion():
     ecuacion_ingresada = str(input('ingresa la ecuacion a evaluar: '))                              #Solicita ingresar una ecuacion.
     ecuacion_espacio = ''.join([i  if i.isalnum() == True
                                     else '' if i == ' ' or i == '_' 
-                                    else ' ' + i + ' ' for i in ecuacion_ingresada])                #Agrega espacios requeridos para separar terminos y simbolos.
+                                    else ' ' + i + ' ' for i in ecuacion_ingresada])                #Arregla los espacios requeridos para separar terminos y simbolos.
     ecuacion_elevado = ecuacion_espacio.replace('*  *','**')                                        #Resuelve el problema de separar los **.
     asignacion = []                                                                                 #Prepara la lista vacia.
     variables = [i for i in set(ecuacion_elevado.split()) if i.isalpha() == True]                   #Separa el string (tipo palabra) y deja solo las variables unicas (con set).
