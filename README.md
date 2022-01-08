@@ -9,6 +9,7 @@ This is my first personal code, which allowed me, in a basic way, to apply my kn
   2. El programa detectara cada termino (entre simbolos) y solicitará los valores a asignar.  
   3. El programa calculará el resultado de la ecuacion.
 
+.
   1. Enter the right hand side (RHS) of any cleared equation (Example: if y = a*x+b, only a*x+b).
   2. The program will detect each term (between symbols) and will request the values to assign.
   3. The program will calculate the result of the equation.
