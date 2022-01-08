@@ -2,6 +2,7 @@
 
 ## History = Historia:
 Este es mi primer codigo personal, que me permitió, de manera básica, aplicar mis conocimientos de Python a una idea propia.<br>
+
 This is my first personal code, which allowed me, in a basic way, to apply my knowledge of Python to my own idea.
 
 ## What the project does = Que hace el proyecto:
