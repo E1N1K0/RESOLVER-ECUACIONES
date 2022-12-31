@@ -25,7 +25,7 @@ resolver_ecuacion()
 # y = a + b * x     => escribe solo a + b * x; asigna 1,2,3 resultado = 7
 # Area_triangulo, At = base * altura / 2; asigna 2, 4 => resultado = 4
 # ecuacion cubica, y = A + B * x + C * x ** 2 + D * x ** 3, asigna 1,2,3,4,5,6 => resultado = 54
-# exponente = y = 2 ** x, asigna 2, resultado = 2
+# exponente = y = 2 ** x, asigna 2, resultado = 4
 
 # Debería poder superar este ejemplo:
 # largo_linea (MM1) = (ritmo_llegadas**2)/(ritmo_servicio*(ritmo_servicio-ritmo_llegadas)); asigna: ritmo_llegadas = 15 persona/h, ritmo_servicio = 20 persona/h => resultado
