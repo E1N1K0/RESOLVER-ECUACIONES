@@ -17,7 +17,7 @@ def resolver_ecuacion():
     solucion = [diccionario[i] if i.isalpha() == True 
                                else i for i in ecuacion_elevado.split()]                            # Almacena los valores asignados en diccionario (incorpora simbolos).   
     resultado = ' '.join(map(str,solucion))                                                         # Convierte a string!
-    return eval(resultado), print(eval(resultado)), input('presiona cualquier letra para salir')                                                                         # Calcula el string!
+    return eval(resultado), print(eval(resultado)), input('presiona cualquier letra para salir')    # Calcula el string!
 
 # EJECUCION:
 resolver_ecuacion()
